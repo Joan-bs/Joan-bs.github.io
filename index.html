@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Joan Ramón Bonell Sarmiento</title>
+  <meta name="description" content="Página personal de Joan Ramón Bonell Sarmiento, estudiante de Ingeniería en Sistemas Computacionales.">
+  <style>
+    /* ---------- Variables: paleta y tipografía ---------- */
+    :root {
+      --paper: #f3f5f9;
+      --ink: #14213d;
+      --muted: #566078;
+      --blue: #2347c5;
+      --mark: #ffd84d;
+      --line: #d5dae5;
+      --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    /* ---------- Base ---------- */
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 1.0625rem;
+      line-height: 1.65;
+    }
+    .wrap {
+      width: 100%;
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* ---------- Encabezado con cuadrícula tipo papel milimétrico ---------- */
+    .hero {
+      padding: 4.5rem 0 3.5rem;
+      border-bottom: 2px solid var(--ink);
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .hero h1 {
+      margin: 0 0 1rem;
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 9vw, 4.4rem);
+      line-height: 1.03;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+    }
+
+    /* ---------- Secciones ---------- */
+    main { padding: 1rem 0 2rem; }
+    section { padding: 2.25rem 0 0.5rem; }
+    h2 {
+      margin: 0 0 1rem;
+      padding-left: 0.75rem;
+      border-left: 6px solid var(--mark);
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      line-height: 1.2;
+    }
+    p { margin: 0 0 1rem; max-width: 38rem; }
+
+    /* Lista de intereses: viñetas cuadradas azules */
+    .interests {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.6rem;
+    }
+    .interests li {
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    .interests li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 0.6rem;
+      height: 0.6rem;
+      background: var(--blue);
+    }
+
+    /* Lo que quiero aprender: filas con título y descripción */
+    .learn { margin: 0; padding: 0; list-style: none; }
+    .learn li {
+      padding: 0.9rem 0;
+      border-top: 1px solid var(--line);
+    }
+    .learn li:last-child { border-bottom: 1px solid var(--line); }
+    .learn strong { display: block; font-family: var(--serif); font-size: 1.15rem; }
+    .learn span { color: var(--muted); }
+
+    /* ---------- Enlace a GitHub ---------- */
+    .btn {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.8rem 1.4rem;
+      background: var(--ink);
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      border: 2px solid var(--ink);
+      border-radius: 6px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .btn:hover { background: var(--mark); color: var(--ink); }
+    a:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+
+    /* ---------- Pie de página ---------- */
+    footer {
+      margin-top: 2rem;
+      padding: 1.5rem 0 2.5rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* ---------- Pantallas grandes y accesibilidad ---------- */
+    @media (min-width: 700px) {
+      .hero { padding: 6rem 0 4.5rem; }
+      .interests { grid-template-columns: 1fr 1fr; gap: 0.6rem 2rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .caret { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <h1>Joan Ramón Bonell Sarmiento<span class="caret" aria-hidden="true"></span></h1>
+      <p>Estudiante de primer semestre de Ingeniería en Sistemas Computacionales en la Universidad La Salle Chihuahua.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section id="sobre-mi">
+      <h2>Sobre mí</h2>
+      <!-- EDITA: cuenta aquí algo tuyo con tus propias palabras -->
+      <p>Soy Joan y acabo de empezar mi carrera en Chihuahua. Me gusta resolver probelmas. Trataré de enfocarme en un sector específico. Esta página es mi primer proyecto web y mi punto de partida para ir mostrando lo que aprenda.</p>
+    </section>
+
+    <section id="intereses">
+      <h2>Mis intereses</h2>
+      <!-- EDITA: cambia, quita o agrega elementos <li> -->
+      <ul class="interests">
+        <li>Programación</li>
+        <li>Tecnología y computadoras</li>
+        <li>Resolver problemas lógicos</li>
+        <li>Aprender con proyectos prácticos</li>
+      </ul>
+    </section>
+
+    <section id="aprender">
+      <h2>Lo que quiero aprender</h2>
+      <!-- EDITA: ajusta los temas a lo que de verdad quieras estudiar -->
+      <ul class="learn">
+        <li><strong>Lógica de programación</strong><span>Bases sólidas para escribir código claro y ordenado.</span></li>
+        <li><strong>Desarrollo web</strong><span>Python, JavaScript, C++, etc.</span></li>
+        <li><strong>Bases de datos</strong><span>Guardar y consultar información de forma eficiente. SQL y NoSQL.</span></li>
+        <li><strong>Git y GitHub</strong><span>Llevar el control de mis proyectos y colaborar con otros.</span></li>
+      </ul>
+    </section>
+
+    <section id="github">
+      <h2>Mi código</h2>
+      <p>Aquí voy a publicar mis proyectos y ejercicios.</p>
+      <!-- EDITA: reemplaza "tu-usuario" por tu usuario real de GitHub -->
+      <a class="btn" href="https://github.com/Joan-bs" target="_blank" rel="noopener noreferrer">Ver mi perfil de GitHub</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">Hecho con HTML y CSS, sin librerías externas.</div>
+  </footer>
+
+</body>
+</html>
